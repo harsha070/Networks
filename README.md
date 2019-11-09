@@ -10,12 +10,18 @@ Computer architectures are layered to simplify design and implementation
 
 Time required to transmit a message depends on number of bits in image and how fast network can transfer. Information in blocks like images, text are measured in bits while information in streams like voice/video calls are measured in bits-per-second
 
+## The Socket API
+
+Application <-> Kernel space Socket (bound to a port number) <-> Communication protocol <-> Network <-> Communication protocol <-> Socket <-> Application
+
+
+
 ## Transport Layer
 
 L3 Network layer uses connectionless IP for transmission. L4 and higher protocols are expected to provide reliability and ordering
 
 #### TCP
-- Creates connection
+- Connection oriented
 - Provides acknowledgement of sent packets and resends lost
 - Has flow control
 - HTTP / FTP use TCP
@@ -25,6 +31,7 @@ L3 Network layer uses connectionless IP for transmission. L4 and higher protocol
 - Doesn't acknowledge sent packets. Depends on higher layers.
 - Used in video and voice streaming
 - No flow control. Receiver might drop packets
+- No ordering
 
 
 #### Communication Delay
